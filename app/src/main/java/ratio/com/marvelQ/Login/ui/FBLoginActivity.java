@@ -27,6 +27,9 @@ import com.facebook.login.widget.LoginButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,6 +37,7 @@ import ratio.com.marvelQ.Login.LoginPresenter;
 import ratio.com.marvelQ.Login.di.LoginComponent;
 import ratio.com.marvelQ.R;
 import ratio.com.marvelQ.Score.ui.MainActivity;
+import ratio.com.marvelQ.entities.AeSimpleSHA1;
 import ratio.com.marvelQ.marvelQApp;
 
 public class FBLoginActivity extends AppCompatActivity implements LoginView {
@@ -132,9 +136,19 @@ public class FBLoginActivity extends AppCompatActivity implements LoginView {
                             Log.d(TAG,name);
                             img = object.getJSONObject("picture").getJSONObject("data").getString("url");
                             String oauth = object.getString("id");
-                            presenter.fbloginValidation(name,emailstr,oauth);
+                            String pw_hash = "";
+
+                                pw_hash = AeSimpleSHA1.SHA1(oauth);
+
+                            presenter.fbloginValidation(name,emailstr,pw_hash);
 
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            showLoginFBError();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                            showLoginFBError();
+                        } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                             showLoginFBError();
                         }
@@ -166,7 +180,19 @@ public class FBLoginActivity extends AppCompatActivity implements LoginView {
             name = actualprofile.getFirstName();
             Log.d(TAG,name);
             String oauth = actualprofile.getId();
-            presenter.fbloginValidation(name,"",oauth);
+            String pw_hash = "";
+
+            try {
+                pw_hash = AeSimpleSHA1.SHA1(oauth);
+                presenter.fbloginValidation(name,"",pw_hash);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+                showLoginFBError();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+                showLoginFBError();
+            }
+
 
         }
     }
@@ -242,7 +268,19 @@ public class FBLoginActivity extends AppCompatActivity implements LoginView {
         disableInputs();
         showProgress();
         if (!InputsError()) {
-            presenter.loginValidation(email.getText().toString(), password.getText().toString());
+            String pw_hash = "";
+
+            try {
+                pw_hash = AeSimpleSHA1.SHA1(password.getText().toString());
+                presenter.loginValidation(email.getText().toString(),pw_hash);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+                showLoginError();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+                showLoginError();
+            }
+
         } else {
             enableInputs();
             hideProgress();
@@ -258,7 +296,19 @@ public class FBLoginActivity extends AppCompatActivity implements LoginView {
             disableInputs();
             showProgress();
             if (!ErroOnName()&&!InputsError()) {
-                presenter.registerValidation(name, email.getText().toString(), password.getText().toString());
+                String pw_hash = "";
+
+                try {
+                    pw_hash = AeSimpleSHA1.SHA1(password.getText().toString());
+                    presenter.registerValidation(name, email.getText().toString(), pw_hash);
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                    showLoginError();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    showLoginError();
+                }
+
             } else {
                 enableInputs();
                 hideProgress();

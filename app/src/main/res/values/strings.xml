@@ -34,5 +34,7 @@
     <string name="marvel_license">Data provided by Marvel. © 2016 MARVEL</string>
     <string name="play">Begin</string>
     <string name="high_scores">High Scores:</string>
+    <string name="score">Score:</string>
+    <string name="lives">Lives:</string>
 
 </resources>

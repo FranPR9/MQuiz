@@ -33,5 +33,8 @@
     <string name="signin">Registrar</string>
     <string name="play">Jugar</string>
     <string name="high_scores">Scores más altos:</string>
+    <string name="marvel_license">Data provided by Marvel. © 2016 MARVEL</string>
+    <string name="score">Score:</string>
+    <string name="lives">Vidas:</string>
 
 </resources>
