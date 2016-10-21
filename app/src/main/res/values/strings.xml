@@ -1,31 +1,38 @@
 <resources>
     <string name="app_name">Marvel Quiz</string>
-    <string name="instructs">Seleciona el personaje que aparece en la imagen, solo tienes 3 Errores</string>
-    <string name="gameover_instructs">a los 3 errores el juego se termina</string>
+    <string name="instructs">Choose the correct character that appears on the image, you only get 3 Errors!</string>
+    <string name="gameover_instructs">with 3 Errors the game finishes</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="success">¡Exito!</string>
-    <string name="loginError">Error al iniciar sesión</string>
-    <string name="missingInfoError">Error: revisa los campos que llenaste</string>
-    <string name="empty_password">Falta el Password</string>
-    <string name="empty_email">¡Email vacio!</string>
-    <string name="invalid_email">email inválido</string>
-    <string name="scores_error">hubo un error al descargar los errores, por favor inténtalo más tarde.</string>
-    <string name="optionserror">¡Hubo un error al conectarse a los servidores de marvel! Inténta mas tarde</string>
-    <string name="continue_afterError">Continuar</string>
-    <string name="succesSavingScore">¡Score Guardado!</string>
-    <string name="errorSavingScore">Error al guardar el score :(</string>
-    <string name="registerError">Error al registrarse, intenta mas tarde</string>
-    <string name="fbloginError">Error al inicar sesión con Facebook</string>
-    <string name="empty_name">¡Nombre vacio!</string>
-    <string name="begin">Empezar</string>
-    <string name="cancel">Cancelar</string>
+    <string name="success">Success!</string>
+    <string name="loginError">Error on Login</string>
+    <string name="missingInfoError">Error: check input information</string>
+    <string name="empty_password">Missing password</string>
+    <string name="empty_email">Email input empty!</string>
+    <string name="invalid_email">Error you enter an invalid email</string>
+    <string name="scores_error">there was an error retrieving the scores, try it later.</string>
+    <string name="optionserror">There was an error, with the Marvel Server, Sorry! try later</string>
+    <string name="continue_afterError">Continue</string>
+    <string name="succesSavingScore">Score saved!</string>
+    <string name="errorSavingScore">Error saving score :(</string>
+    <string name="registerError">Error on Sign in, please check you info and try later.</string>
+    <string name="fbloginError">Error logging in with facebook</string>
+    <string name="empty_name">Name input empty!</string>
+    <string name="begin">Start</string>
+    <string name="cancel">Cancel</string>
     <string name="gameOver">Game Over :(</string>
     <string name="ok">Ok</string>
     <string name="shareDialogText">MQuiz score:</string>
+    <string name="who_is">Who is this?</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="signin">Register</string>
+    <string name="marvel_license">Data provided by Marvel. © 2016 MARVEL</string>
+    <string name="play">Begin</string>
+    <string name="high_scores">High Scores:</string>
 
 </resources>

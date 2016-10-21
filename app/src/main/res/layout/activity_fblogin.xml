@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/name"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:inputType="text"
                 />
 
@@ -73,7 +73,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:id="@+id/login"
             android:background="@color/colorAccent"
             android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -84,7 +84,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="@string/signin"
             android:id="@+id/register"
             android:background="@color/colorPrimaryDark"
             android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -116,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/login_button"
-            android:text="Data provided by Marvel. © 2016 MARVEL"
+            android:text="@string/marvel_license"
             />
 
 
